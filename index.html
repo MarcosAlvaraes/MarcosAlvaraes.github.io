@@ -1,42 +1,562 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Formandos</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ficha de Exercícios — Tipos de Dados (JavaScript)</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; line-height: 1.4; margin: 24px; }
+    h1 { margin-bottom: 6px; }
+    .meta { color: #444; margin-top: 0; }
+    .card { border: 1px solid #ddd; border-radius: 10px; padding: 16px; margin: 14px 0; }
+    .qtitle { font-weight: 700; margin: 0 0 10px; }
+    .row { margin: 8px 0; }
+    label { cursor: pointer; }
+    input[type="text"] { padding: 6px 8px; border: 1px solid #bbb; border-radius: 8px; width: min(520px, 100%); }
+    code { background: #f4f4f4; padding: 2px 6px; border-radius: 6px; }
+    .actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px; }
+    button { padding: 10px 14px; border: 1px solid #222; border-radius: 10px; background: #111; color: #fff; cursor: pointer; }
+    button.secondary { background: #fff; color: #111; }
+    button:disabled { opacity: 0.6; cursor: not-allowed; }
+    .result { margin-top: 18px; padding: 14px; border-radius: 10px; border: 1px solid #ddd; }
+    .ok { border-color: #1f8a3b; background: #eaf7ee; }
+    .bad { border-color: #b42318; background: #fdecec; }
+    .inline { display: inline-block; margin-right: 12px; }
+    .small { color: #444; font-size: 0.95rem; }
+    .legend { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+    .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; }
+    .dot.ok { background: #1f8a3b; }
+    .dot.bad { background: #b42318; }
+    .feedback { margin-top: 10px; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+  </style>
 </head>
+
 <body>
-    <h1>Lista de Formandos</h1>
+  <h1>Ficha de Exercícios — Tipos de Dados em JavaScript</h1>
+  <p class="meta">Escolhe as respostas. No fim clica em <strong>Submeter</strong> para ver o que está certo e errado.</p>
 
-    <!-- Bloco do Formador -->
-    <div class="formador-container">
-        <h2>Formador</h2>
-        <iframe src="formador.html"></iframe>
+  <div class="legend small">
+    <span><span class="dot ok"></span>Certo</span>
+    <span><span class="dot bad"></span>Errado</span>
+  </div>
+
+  <!-- Q1: Identificar tipo -->
+  <div class="card" data-question="q1">
+    <p class="qtitle">Exercício 1 — Identificar o tipo de dado</p>
+    <p class="small">Para cada valor, escolhe o tipo correto.</p>
+
+    <div class="row">
+      <div class="inline"><span class="mono">"Olá"</span></div>
+      <select name="q1a" data-correct="string">
+        <option value="">— escolher —</option>
+        <option value="string">string</option>
+        <option value="number">number</option>
+        <option value="boolean">boolean</option>
+        <option value="array">array</option>
+        <option value="object">object</option>
+        <option value="undefined">undefined</option>
+        <option value="null">null</option>
+      </select>
+      <span class="feedback" data-feedback-for="q1a"></span>
     </div>
 
-    <!-- Lista de Formandos -->
-    <div class="container">
-        <iframe src="formandos/1.html"></iframe>
-        <iframe src="formandos/2.html"></iframe>
-        <iframe src="formandos/3.html"></iframe>
-        <iframe src="formandos/4.html"></iframe>
-        <iframe src="formandos/5.html"></iframe>
-        <iframe src="formandos/6.html"></iframe>
-        <iframe src="formandos/7.html"></iframe>
-        <iframe src="formandos/8.html"></iframe>
-        <iframe src="formandos/9.html"></iframe>
-        <iframe src="formandos/10.html"></iframe>
-        <iframe src="formandos/11.html"></iframe>
-        <iframe src="formandos/12.html"></iframe>
-        <iframe src="formandos/13.html"></iframe>
-        <iframe src="formandos/14.html"></iframe>
-        <iframe src="formandos/15.html"></iframe>
-        <iframe src="formandos/16.html"></iframe>
-        <iframe src="formandos/17.html"></iframe>
-        <iframe src="formandos/18.html"></iframe>
-        <iframe src="formandos/19.html"></iframe>
-        <iframe src="formandos/20.html"></iframe>
+    <div class="row">
+      <div class="inline"><span class="mono">25</span></div>
+      <select name="q1b" data-correct="number">
+        <option value="">— escolher —</option>
+        <option value="string">string</option>
+        <option value="number">number</option>
+        <option value="boolean">boolean</option>
+        <option value="array">array</option>
+        <option value="object">object</option>
+        <option value="undefined">undefined</option>
+        <option value="null">null</option>
+      </select>
+      <span class="feedback" data-feedback-for="q1b"></span>
     </div>
+
+    <div class="row">
+      <div class="inline"><span class="mono">true</span></div>
+      <select name="q1c" data-correct="boolean">
+        <option value="">— escolher —</option>
+        <option value="string">string</option>
+        <option value="number">number</option>
+        <option value="boolean">boolean</option>
+        <option value="array">array</option>
+        <option value="object">object</option>
+        <option value="undefined">undefined</option>
+        <option value="null">null</option>
+      </select>
+      <span class="feedback" data-feedback-for="q1c"></span>
+    </div>
+
+    <div class="row">
+      <div class="inline"><span class="mono">"18"</span></div>
+      <select name="q1d" data-correct="string">
+        <option value="">— escolher —</option>
+        <option value="string">string</option>
+        <option value="number">number</option>
+        <option value="boolean">boolean</option>
+        <option value="array">array</option>
+        <option value="object">object</option>
+        <option value="undefined">undefined</option>
+        <option value="null">null</option>
+      </select>
+      <span class="feedback" data-feedback-for="q1d"></span>
+    </div>
+
+    <div class="row">
+      <div class="inline"><span class="mono">[1, 2, 3]</span></div>
+      <select name="q1e" data-correct="array">
+        <option value="">— escolher —</option>
+        <option value="string">string</option>
+        <option value="number">number</option>
+        <option value="boolean">boolean</option>
+        <option value="array">array</option>
+        <option value="object">object</option>
+        <option value="undefined">undefined</option>
+        <option value="null">null</option>
+      </select>
+      <span class="feedback" data-feedback-for="q1e"></span>
+    </div>
+
+    <div class="row">
+      <div class="inline"><span class="mono">{ nome: "Ana" }</span></div>
+      <select name="q1f" data-correct="object">
+        <option value="">— escolher —</option>
+        <option value="string">string</option>
+        <option value="number">number</option>
+        <option value="boolean">boolean</option>
+        <option value="array">array</option>
+        <option value="object">object</option>
+        <option value="undefined">undefined</option>
+        <option value="null">null</option>
+      </select>
+      <span class="feedback" data-feedback-for="q1f"></span>
+    </div>
+
+    <div class="row">
+      <div class="inline"><span class="mono">false</span></div>
+      <select name="q1g" data-correct="boolean">
+        <option value="">— escolher —</option>
+        <option value="string">string</option>
+        <option value="number">number</option>
+        <option value="boolean">boolean</option>
+        <option value="array">array</option>
+        <option value="object">object</option>
+        <option value="undefined">undefined</option>
+        <option value="null">null</option>
+      </select>
+      <span class="feedback" data-feedback-for="q1g"></span>
+    </div>
+
+    <div class="row">
+      <div class="inline"><span class="mono">null</span></div>
+      <select name="q1h" data-correct="null">
+        <option value="">— escolher —</option>
+        <option value="string">string</option>
+        <option value="number">number</option>
+        <option value="boolean">boolean</option>
+        <option value="array">array</option>
+        <option value="object">object</option>
+        <option value="undefined">undefined</option>
+        <option value="null">null</option>
+      </select>
+      <span class="feedback" data-feedback-for="q1h"></span>
+    </div>
+
+    <div class="row">
+      <div class="inline"><span class="mono">let x;</span></div>
+      <select name="q1i" data-correct="undefined">
+        <option value="">— escolher —</option>
+        <option value="string">string</option>
+        <option value="number">number</option>
+        <option value="boolean">boolean</option>
+        <option value="array">array</option>
+        <option value="object">object</option>
+        <option value="undefined">undefined</option>
+        <option value="null">null</option>
+      </select>
+      <span class="feedback" data-feedback-for="q1i"></span>
+    </div>
+  </div>
+
+  <!-- Q2: Texto ou Número -->
+  <div class="card" data-question="q2">
+    <p class="qtitle">Exercício 2 — Texto ou número?</p>
+    <p class="small">Assinala <strong>T</strong> (texto) ou <strong>N</strong> (número).</p>
+
+    <div class="row">
+      <span class="mono">"2026"</span>
+      <label class="inline"><input type="radio" name="q2a" value="T" data-correct="T"> T</label>
+      <label class="inline"><input type="radio" name="q2a" value="N"> N</label>
+      <span class="feedback" data-feedback-for="q2a"></span>
+    </div>
+
+    <div class="row">
+      <span class="mono">2026</span>
+      <label class="inline"><input type="radio" name="q2b" value="T"> T</label>
+      <label class="inline"><input type="radio" name="q2b" value="N" data-correct="N"> N</label>
+      <span class="feedback" data-feedback-for="q2b"></span>
+    </div>
+
+    <div class="row">
+      <span class="mono">"3.14"</span>
+      <label class="inline"><input type="radio" name="q2c" value="T" data-correct="T"> T</label>
+      <label class="inline"><input type="radio" name="q2c" value="N"> N</label>
+      <span class="feedback" data-feedback-for="q2c"></span>
+    </div>
+
+    <div class="row">
+      <span class="mono">3.14</span>
+      <label class="inline"><input type="radio" name="q2d" value="T"> T</label>
+      <label class="inline"><input type="radio" name="q2d" value="N" data-correct="N"> N</label>
+      <span class="feedback" data-feedback-for="q2d"></span>
+    </div>
+
+    <div class="row">
+      <span class="mono">"10"</span>
+      <label class="inline"><input type="radio" name="q2e" value="T" data-correct="T"> T</label>
+      <label class="inline"><input type="radio" name="q2e" value="N"> N</label>
+      <span class="feedback" data-feedback-for="q2e"></span>
+    </div>
+
+    <div class="row">
+      <span class="mono">10</span>
+      <label class="inline"><input type="radio" name="q2f" value="T"> T</label>
+      <label class="inline"><input type="radio" name="q2f" value="N" data-correct="N"> N</label>
+      <span class="feedback" data-feedback-for="q2f"></span>
+    </div>
+  </div>
+
+  <!-- Q3: Criar variáveis (texto livre, com validação simples) -->
+  <div class="card" data-question="q3">
+    <p class="qtitle">Exercício 3 — Criar variáveis</p>
+    <p class="small">Escreve uma linha de JavaScript para cada pedido.</p>
+
+    <div class="row">
+      <div><strong>1)</strong> Uma variável com <strong>texto</strong> (nome):</div>
+      <input type="text" name="q3a" placeholder='Ex.: let nome = "Ana";' data-correct-pattern='^\s*let\s+\w+\s*=\s*["'"](.+)["'"]\s*;\s*$'>
+      <div class="small">Dica: tem de ter aspas e ponto e vírgula.</div>
+      <span class="feedback" data-feedback-for="q3a"></span>
+    </div>
+
+    <div class="row">
+      <div><strong>2)</strong> Uma variável com um <strong>número</strong> (idade):</div>
+      <input type="text" name="q3b" placeholder="Ex.: let idade = 18;" data-correct-pattern='^\s*let\s+\w+\s*=\s*\d+(\.\d+)?\s*;\s*$'>
+      <div class="small">Dica: não uses aspas.</div>
+      <span class="feedback" data-feedback-for="q3b"></span>
+    </div>
+
+    <div class="row">
+      <div><strong>3)</strong> Uma variável com <strong>true</strong> ou <strong>false</strong>:</div>
+      <input type="text" name="q3c" placeholder="Ex.: let maior = true;" data-correct-pattern='^\s*let\s+\w+\s*=\s*(true|false)\s*;\s*$'>
+      <div class="small">Dica: escreve exatamente <code>true</code> ou <code>false</code> (sem aspas).</div>
+      <span class="feedback" data-feedback-for="q3c"></span>
+    </div>
+  </div>
+
+  <!-- Q4: prompt é texto -->
+  <div class="card" data-question="q4">
+    <p class="qtitle">Exercício 4 — O que acontece aqui?</p>
+    <p class="small">Observa o código:</p>
+    <p><code>let idade = prompt("Qual é a tua idade?");</code></p>
+
+    <div class="row">
+      <div>1) O valor guardado em <code>idade</code> é:</div>
+      <label class="inline"><input type="radio" name="q4a" value="texto" data-correct="texto"> Texto</label>
+      <label class="inline"><input type="radio" name="q4a" value="numero"> Número</label>
+      <span class="feedback" data-feedback-for="q4a"></span>
+    </div>
+
+    <div class="row">
+      <div>2) Para transformar esse valor num número, escreve a linha correta:</div>
+      <input type="text" name="q4b" placeholder="Ex.: idade = Number(idade);" data-correct-pattern='^\s*idade\s*=\s*Number\s*\(\s*idade\s*\)\s*;\s*$'>
+      <span class="feedback" data-feedback-for="q4b"></span>
+    </div>
+  </div>
+
+  <!-- Q5: Array -->
+  <div class="card" data-question="q5">
+    <p class="qtitle">Exercício 5 — Listas (array)</p>
+    <p class="small">Observa:</p>
+    <p><code>let cores = ["vermelho", "azul", "verde"];</code></p>
+
+    <div class="row">
+      <div>1) Que tipo de dado é <code>cores</code>?</div>
+      <label class="inline"><input type="radio" name="q5a" value="array" data-correct="array"> array</label>
+      <label class="inline"><input type="radio" name="q5a" value="object"> object</label>
+      <label class="inline"><input type="radio" name="q5a" value="string"> string</label>
+      <span class="feedback" data-feedback-for="q5a"></span>
+    </div>
+
+    <div class="row">
+      <div>2) Escreve uma lista com <strong>3 nomes</strong>:</div>
+      <input type="text" name="q5b" placeholder='Ex.: ["Ana","Bruno","Carla"]' data-correct-pattern='^\s*\[\s*["'"][^"'"]+["'"]\s*,\s*["'"][^"'"]+["'"]\s*,\s*["'"][^"'"]+["'"]\s*\]\s*$'>
+      <div class="small">Dica: usa <code>[ ]</code>, vírgulas e aspas.</div>
+      <span class="feedback" data-feedback-for="q5b"></span>
+    </div>
+  </div>
+
+  <!-- Q6: Object -->
+  <div class="card" data-question="q6">
+    <p class="qtitle">Exercício 6 — Objectos (nível básico)</p>
+    <p class="small">Observa:</p>
+    <p><code>let pessoa = { nome: "Rita", idade: 30 };</code></p>
+
+    <div class="row">
+      <div>1) Que tipo de dado é <code>pessoa</code>?</div>
+      <label class="inline"><input type="radio" name="q6a" value="object" data-correct="object"> object</label>
+      <label class="inline"><input type="radio" name="q6a" value="array"> array</label>
+      <label class="inline"><input type="radio" name="q6a" value="string"> string</label>
+      <span class="feedback" data-feedback-for="q6a"></span>
+    </div>
+
+    <div class="row">
+      <div>2) Quantas informações (propriedades) tem este objecto?</div>
+      <label class="inline"><input type="radio" name="q6b" value="1"> 1</label>
+      <label class="inline"><input type="radio" name="q6b" value="2" data-correct="2"> 2</label>
+      <label class="inline"><input type="radio" name="q6b" value="3"> 3</label>
+      <span class="feedback" data-feedback-for="q6b"></span>
+    </div>
+  </div>
+
+  <!-- Q7: typeof -->
+  <div class="card" data-question="q7">
+    <p class="qtitle">Exercício 7 — Usar <code>typeof</code></p>
+    <p class="small">Completa com o resultado esperado (string/number/boolean).</p>
+
+    <div class="row">
+      <div><code>typeof "Olá"</code> devolve:</div>
+      <select name="q7a" data-correct="string">
+        <option value="">— escolher —</option>
+        <option value="string">"string"</option>
+        <option value="number">"number"</option>
+        <option value="boolean">"boolean"</option>
+      </select>
+      <span class="feedback" data-feedback-for="q7a"></span>
+    </div>
+
+    <div class="row">
+      <div><code>typeof 10</code> devolve:</div>
+      <select name="q7b" data-correct="number">
+        <option value="">— escolher —</option>
+        <option value="string">"string"</option>
+        <option value="number">"number"</option>
+        <option value="boolean">"boolean"</option>
+      </select>
+      <span class="feedback" data-feedback-for="q7b"></span>
+    </div>
+
+    <div class="row">
+      <div><code>typeof false</code> devolve:</div>
+      <select name="q7c" data-correct="boolean">
+        <option value="">— escolher —</option>
+        <option value="string">"string"</option>
+        <option value="number">"number"</option>
+        <option value="boolean">"boolean"</option>
+      </select>
+      <span class="feedback" data-feedback-for="q7c"></span>
+    </div>
+  </div>
+
+  <div class="actions">
+    <button id="submitBtn">Submeter</button>
+    <button class="secondary" id="resetBtn" type="button">Limpar</button>
+    <button class="secondary" id="downloadBtn" type="button" disabled>Descarregar resultado (.txt)</button>
+  </div>
+
+  <div id="finalResult" class="result" style="display:none;"></div>
+
+  <script>
+    function setFeedback(el, ok, message) {
+      const container = el.closest(".row") || el.closest(".card");
+      if (container) {
+        container.classList.remove("ok", "bad");
+        container.classList.add(ok ? "ok" : "bad");
+      }
+      const fbKey = el.name || el.getAttribute("name");
+      const fb = document.querySelector('[data-feedback-for="' + fbKey + '"]');
+      if (fb) fb.textContent = message;
+    }
+
+    function getRadioValue(name) {
+      const checked = document.querySelector('input[type="radio"][name="' + name + '"]:checked');
+      return checked ? checked.value : "";
+    }
+
+    function gradeSelect(selectEl) {
+      const correct = selectEl.dataset.correct;
+      const value = selectEl.value;
+      const ok = value === correct;
+      setFeedback(selectEl, ok, ok ? "✅ certo" : ("❌ errado (certo: " + correct + ")"));
+      return ok;
+    }
+
+    function gradeRadio(name) {
+      const correct = document.querySelector('input[type="radio"][name="' + name + '"][data-correct]')?.dataset.correct;
+      const value = getRadioValue(name);
+      const ok = value && correct && value === correct;
+      const anyInput = document.querySelector('input[type="radio"][name="' + name + '"]');
+      if (anyInput) {
+        setFeedback(anyInput, ok, ok ? "✅ certo" : ("❌ errado" + (correct ? " (certo: " + correct + ")" : "")));
+      }
+      return ok;
+    }
+
+    function gradeText(inputEl) {
+      const pattern = inputEl.dataset.correctPattern;
+      const value = (inputEl.value || "").trim();
+      const re = new RegExp(pattern);
+      const ok = re.test(value);
+
+      // Mensagens amigáveis por tipo de pergunta
+      let hint = "";
+      if (!ok) {
+        if (inputEl.name === "q4b") hint = " (ex.: idade = Number(idade);)";
+        else if (inputEl.name === "q5b") hint = ' (ex.: ["Ana","Bruno","Carla"])';
+        else hint = " (vê o exemplo no enunciado)";
+      }
+
+      setFeedback(inputEl, ok, ok ? "✅ certo" : ("❌ errado" + hint));
+      return ok;
+    }
+
+    function clearMarks() {
+      document.querySelectorAll(".row, .card").forEach(el => {
+        el.classList.remove("ok", "bad");
+      });
+      document.querySelectorAll(".feedback").forEach(el => el.textContent = "");
+    }
+
+    function buildReport(score, total, details) {
+      const lines = [];
+      lines.push("Resultado — Ficha Tipos de Dados (JavaScript)");
+      lines.push("Pontuação: " + score + " / " + total);
+      lines.push("");
+      details.forEach(d => {
+        lines.push((d.ok ? "✅" : "❌") + " " + d.label + (d.ok ? "" : (" — certo: " + d.correct)));
+      });
+      return lines.join("\n");
+    }
+
+    document.getElementById("submitBtn").addEventListener("click", function () {
+      clearMarks();
+
+      let score = 0;
+      const details = [];
+
+      // Q1 selects
+      document.querySelectorAll('[data-question="q1"] select').forEach((sel, idx) => {
+        const ok = gradeSelect(sel);
+        const label = 'Ex.1.' + (idx + 1);
+        details.push({ label, ok, correct: sel.dataset.correct });
+        if (ok) score++;
+      });
+
+      // Q2 radios
+      ["q2a","q2b","q2c","q2d","q2e","q2f"].forEach((name, i) => {
+        const ok = gradeRadio(name);
+        details.push({ label: 'Ex.2.' + (i + 1), ok, correct: document.querySelector('input[name="' + name + '"][data-correct]')?.dataset.correct || "" });
+        if (ok) score++;
+      });
+
+      // Q3 text
+      ["q3a","q3b","q3c"].forEach((name, i) => {
+        const inputEl = document.querySelector('input[name="' + name + '"]');
+        const ok = gradeText(inputEl);
+        details.push({ label: 'Ex.3.' + (i + 1), ok, correct: "uma linha válida" });
+        if (ok) score++;
+      });
+
+      // Q4
+      {
+        const ok1 = gradeRadio("q4a");
+        details.push({ label: "Ex.4.1", ok: ok1, correct: "texto" });
+        if (ok1) score++;
+
+        const inputEl = document.querySelector('input[name="q4b"]');
+        const ok2 = gradeText(inputEl);
+        details.push({ label: "Ex.4.2", ok: ok2, correct: "idade = Number(idade);" });
+        if (ok2) score++;
+      }
+
+      // Q5
+      {
+        const ok1 = gradeRadio("q5a");
+        details.push({ label: "Ex.5.1", ok: ok1, correct: "array" });
+        if (ok1) score++;
+
+        const inputEl = document.querySelector('input[name="q5b"]');
+        const ok2 = gradeText(inputEl);
+        details.push({ label: "Ex.5.2", ok: ok2, correct: '["Ana","Bruno","Carla"] (qualquer 3 nomes)' });
+        if (ok2) score++;
+      }
+
+      // Q6
+      {
+        const ok1 = gradeRadio("q6a");
+        details.push({ label: "Ex.6.1", ok: ok1, correct: "object" });
+        if (ok1) score++;
+
+        const ok2 = gradeRadio("q6b");
+        details.push({ label: "Ex.6.2", ok: ok2, correct: "2" });
+        if (ok2) score++;
+      }
+
+      // Q7 selects
+      ["q7a","q7b","q7c"].forEach((name, i) => {
+        const sel = document.querySelector('select[name="' + name + '"]');
+        const ok = gradeSelect(sel);
+        details.push({ label: 'Ex.7.' + (i + 1), ok, correct: sel.dataset.correct });
+        if (ok) score++;
+      });
+
+      const total = details.length;
+
+      const final = document.getElementById("finalResult");
+      final.style.display = "block";
+      final.classList.remove("ok","bad");
+      final.classList.add(score === total ? "ok" : "bad");
+
+      final.innerHTML = `
+        <h2 style="margin-top:0;">Resultado</h2>
+        <p><strong>Pontuação:</strong> ${score} / ${total}</p>
+        <p class="small">Vê acima o que está a verde (certo) e a vermelho (errado).</p>
+      `;
+
+      // Preparar download do relatório
+      const reportText = buildReport(score, total, details);
+      const blob = new Blob([reportText], { type: "text/plain;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+
+      const dlBtn = document.getElementById("downloadBtn");
+      dlBtn.disabled = false;
+      dlBtn.onclick = function () {
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "resultado_ficha_tipos_de_dados.txt";
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        // não revogamos já para permitir vários downloads durante a sessão
+      };
+    });
+
+    document.getElementById("resetBtn").addEventListener("click", function () {
+      document.querySelectorAll("select").forEach(s => s.value = "");
+      document.querySelectorAll('input[type="radio"]').forEach(r => r.checked = false);
+      document.querySelectorAll('input[type="text"]').forEach(t => t.value = "");
+      clearMarks();
+      const final = document.getElementById("finalResult");
+      final.style.display = "none";
+      final.innerHTML = "";
+      const dlBtn = document.getElementById("downloadBtn");
+      dlBtn.disabled = true;
+      dlBtn.onclick = null;
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script>
 </body>
 </html>
